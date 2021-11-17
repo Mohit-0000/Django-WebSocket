@@ -73,6 +73,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'django_websocket.wsgi.application'
 ASGI_APPLICATION = 'django_websocket.asgi.application'
 
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            # "hosts": [('127.0.0.1', 6379)],
+            "hosts":[('redis://:ikSBZS873f6DS5vvpBk8OFXmglEZWLrk@redis-10580.c264.ap-south-1-1.ec2.cloud.redislabs.com:10580')],
+        },
+    },
+}
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
